@@ -28,13 +28,15 @@ public class SinglePlayerGameTest {
 
 	@Test
 	public void testAllOnes() {
-		rollMany(20, 1);
+                System.out.println("Test AllOnes");
+                rollMany(20, 1);
 		assertEquals(20, game.score());
 	}
 
 	@Test
 	public void testOneSpare()  {
-		rollSpare(); // 10 + 3
+		System.out.println("Test OneSpare");
+                rollSpare(); // 10 + 3
 		game.lancer(3); // 3
 		rollMany(17, 0); // 0
 		assertEquals(16, game.score());
@@ -42,7 +44,8 @@ public class SinglePlayerGameTest {
 
 	@Test
 	public void testOneStrike()  {
-		rollStrike(); // 10 + 7
+		System.out.println("Test OneStrike");
+                rollStrike(); // 10 + 7
 		game.lancer(3);
 		game.lancer(4);
 		rollMany(16, 0);
@@ -52,12 +55,14 @@ public class SinglePlayerGameTest {
 	@Test
 	public void testPerfectGame() {
 		// 12 boules à 10 points
+                System.out.println("Test Perfect");
 		rollMany(12, 10);
 		assertEquals(300, game.score());
 	}
 
 	@Test
 	public void testTypicalGame()  {
+                System.out.println("Test Typical");
 		rollMany(8, 3); // 6 points aux 4 1° tours -> 24
 		rollStrike(); // 10 + 10
 		rollSpare(); // 10 + 0
